@@ -19,36 +19,72 @@ def main(page: ft.Page):
                         ft.Text('ACADEMIA:'),
                         ft.Text('Selft Parangaba')
                     ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+                    alignment=ft.MainAxisAlignment.SPACE_EVENLY,
+                    horizontal_alignment=ft.CrossAxisAlignment.START),
 
                     ft.Column([
                         ft.Text('INSTRUTOR:'),
                         ft.Text('Zulu')
                     ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+                    alignment=ft.MainAxisAlignment.SPACE_EVENLY,
+                    horizontal_alignment=ft.CrossAxisAlignment.START),
 
                     ft.Column([
                         ft.Text('INÍCIO:'),
                         ft.Text('29/05/2024')
                     ],
-                    alignment=ft.MainAxisAlignment.CENTER,
-                    horizontal_alignment=ft.CrossAxisAlignment.CENTER),
+                    alignment=ft.MainAxisAlignment.SPACE_EVENLY,
+                    horizontal_alignment=ft.CrossAxisAlignment.START),
 
                     ft.IconButton(icon=ft.icons.SETTINGS, icon_size=40)
                 ],
                 alignment=ft.MainAxisAlignment.SPACE_AROUND,
                 )
             ],
-            alignment=ft.MainAxisAlignment.CENTER,
+            alignment=ft.MainAxisAlignment.SPACE_EVENLY,
             horizontal_alignment=ft.CrossAxisAlignment.CENTER,
         )
     )
 
     fichas = ft.Container(
-        bgcolor=ft.colors.WHITE10,
+        bgcolor=ft.colors.BLACK,
         expand=2,
+        content=ft.Row(
+            [
+                ft.Column([
+                    ft.Image(src='a.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,),
+
+                ft.Column([
+                    ft.Image(src='b.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Text('Peit/Ombr', size=12, color=ft.colors.WHITE),
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,),
+
+                ft.Column([
+                    ft.Image(src='c.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Text('Per/Post', size=12, color=ft.colors.WHITE),
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,),
+
+                ft.Column([
+                    ft.Image(src='d.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Text('Cost/Bisc', size=12, color=ft.colors.WHITE),
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,),
+
+                ft.Column([
+                    ft.Image(src='e.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Text('Peit/Tríc', size=12, color=ft.colors.WHITE),
+                ],
+                alignment=ft.MainAxisAlignment.CENTER,)
+            ],
+            alignment=ft.MainAxisAlignment.SPACE_AROUND,
+
+
+        )
     )
 
     corpo = ft.Container(
