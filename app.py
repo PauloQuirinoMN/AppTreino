@@ -1,7 +1,8 @@
 import flet as ft
 
 def main(page: ft.Page):
-    #page.bgcolor=ft.colors.BLUE
+    page.scroll=True
+
     
 
     perfil = ft.Container(
@@ -112,7 +113,7 @@ def main(page: ft.Page):
     )
     mostrador = ft.Container(
         border_radius=10,
-        border=ft.border.all(width=1.5, color=ft.colors.BLUE),
+        border=ft.border.all(width=1.5, color=ft.colors.GREEN),
         margin=ft.margin.all(10),
         bgcolor=ft.colors.WHITE10,
         padding=5,
@@ -122,20 +123,30 @@ def main(page: ft.Page):
                     [
                         ft.ElevatedButton('INICÍAR', height=20, width=100, bgcolor=ft.colors.TRANSPARENT, ),
                         ft.Text('00:00:00', height=20, weight=100, color=ft.colors.WHITE),
-                        ft.ElevatedButton('finalizar', height=20, width=100, bgcolor=ft.colors.TRANSPARENT),
-                        ft.Text('SÉRIE:', style=ft.TextStyle(size=15, color=ft.colors.WHITE, bgcolor=ft.colors.TRANSPARENT)),
-                       
+                        ft.ElevatedButton('finalizar', height=20, width=100, bgcolor=ft.colors.TRANSPARENT),                   
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
 
-                ft.Divider(color=ft.colors.BLUE, height=10),
+                ft.Divider(color=ft.colors.GREEN, height=10),
 
                 ft.Row(
                     [
-                        ft.Text('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', size=13, color=ft.colors.WHITE),
-                        ft.Text('3  ', color=ft.colors.AMBER, size=25),
+                        ft.Text('SÉRIE:', color=ft.colors.WHITE),
+                        ft.Text('2', size=25, color=ft.colors.WHITE),
+                        ft.Text('CARGA: ', color=ft.colors.WHITE),
+                        ft.Text('110', size=30, color=ft.colors.WHITE),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_AROUND,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
+
+                ft.Divider(color=ft.colors.GREEN, height=10),
+
+                ft.Row(
+                    [
+                        ft.Text('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', size=15, color=ft.colors.WHITE),
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                 ),
@@ -150,7 +161,7 @@ def main(page: ft.Page):
         content=ft.Column(
             [
                 ft.Container(
-                    border=ft.border.all(1.5, color=ft.colors.BLUE),
+                    border=ft.border.all(0.5, color=ft.colors.BLUE),
                     border_radius=ft.border_radius.all(10),
                     margin=ft.margin.all(10),
                     bgcolor=ft.colors.TRANSPARENT,
@@ -216,9 +227,9 @@ def main(page: ft.Page):
     )
 
 
-    rodape = ft.Container(
+    cronometro = ft.Container(
         alignment=ft.alignment.center,
-        border=ft.border.all(1.5, color=ft.colors.BLUE),
+        border=ft.border.all(0.5, color=ft.colors.BLUE),
         border_radius=ft.border_radius.all(10),
         bgcolor=ft.colors.TRANSPARENT,
         padding=ft.Padding(left=90, top=5, bottom=5, right=1),
@@ -245,6 +256,7 @@ def main(page: ft.Page):
     )
 
     sair = ft.Container(
+        expand=1,
         content=ft.Row([
             ft.TextButton(text='sair', width=60, height=20, )
             ],
@@ -260,7 +272,7 @@ def main(page: ft.Page):
         border_radius=30,
         border=ft.border.all(1.5, color=ft.colors.GREEN),
         padding=ft.padding.all(5),     
-        height=750,
+        height=800,
         width=400,
         bgcolor=ft.colors.BLACK,
         shadow=ft.BoxShadow(
@@ -274,8 +286,8 @@ def main(page: ft.Page):
                 perfil,
                 fichas,
                 mostrador,
+                cronometro,
                 corpo,
-                rodape,
                 sair,
             ]
         ),
