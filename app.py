@@ -3,7 +3,7 @@ import flet as ft
 def main(page: ft.Page):
     page.scroll=True
 
-    
+    carga = ''
 
     perfil = ft.Container(
         bgcolor=ft.colors.TRANSPARENT,
@@ -12,7 +12,7 @@ def main(page: ft.Page):
             [
                 ft.Image(
                     src='perfil.jpeg',
-                    border_radius=50,
+                    border_radius=15,
                     height=80,
                     width=60,
                 ),
@@ -38,7 +38,7 @@ def main(page: ft.Page):
                     alignment=ft.MainAxisAlignment.SPACE_EVENLY,
                     horizontal_alignment=ft.CrossAxisAlignment.START),
 
-                    ft.IconButton(icon=ft.icons.MENU, icon_size=40)
+                    ft.IconButton(icon=ft.icons.MENU, icon_size=40, icon_color=ft.colors.BLUE_100)
                 ],
                 alignment=ft.MainAxisAlignment.SPACE_AROUND,
                 )
@@ -54,55 +54,55 @@ def main(page: ft.Page):
         content=ft.Row(
             [
                 ft.Container(
-                    border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    border_radius=ft.border_radius.all(10),
+                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
+                    #border_radius=ft.border_radius.all(10),
                     padding=ft.padding.all(5),
                     content=ft.Column([
-                    ft.Image(src='a.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='exe.png', height=50, width=50, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,)
                 ),
 
                 ft.Container(
-                    border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    border_radius=ft.border_radius.all(10),
+                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
+                    #border_radius=ft.border_radius.all(10),
                     padding=ft.padding.all(5),
                     content=ft.Column([
-                    ft.Image(src='b.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='exe1.png', height=50, width=50, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,)
                 ),
 
                 ft.Container(
-                    border=ft.border.all(0.5, color=ft.colors.BLUE),
+                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
                     border_radius=ft.border_radius.all(10),
                     padding=ft.padding.all(5),
                     content=ft.Column([
-                    ft.Image(src='c.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='exe2.png', height=50, width=50, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,)
                 ),
 
                 ft.Container(
-                    border=ft.border.all(0.5, color=ft.colors.BLUE),
+                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
                     border_radius=ft.border_radius.all(10),
                     padding=ft.padding.all(5),
                     content=ft.Column([
-                    ft.Image(src='d.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='exe3.png', height=50, width=50, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,)
                 ),
 
                 ft.Container(
-                    border=ft.border.all(0.5, color=ft.colors.BLUE),
+                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
                     border_radius=ft.border_radius.all(10),
                     padding=ft.padding.all(5),
                     content=ft.Column([
-                    ft.Image(src='e.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='exe2.png', height=50, width=50, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
                 alignment=ft.MainAxisAlignment.CENTER,)
@@ -113,7 +113,7 @@ def main(page: ft.Page):
     )
     mostrador = ft.Container(
         border_radius=10,
-        border=ft.border.all(width=1.5, color=ft.colors.GREEN),
+        #border=ft.border.all(width=1.5, color=ft.colors.GREEN),
         margin=ft.margin.all(10),
         bgcolor=ft.colors.WHITE10,
         padding=5,
@@ -121,28 +121,28 @@ def main(page: ft.Page):
             [
                 ft.Row(
                     [
-                        ft.ElevatedButton('INICÍAR', height=20, width=100, bgcolor=ft.colors.TRANSPARENT, ),
+                        ft.ElevatedButton('INICÍAR', height=20, width=100, bgcolor=ft.colors.TRANSPARENT, color=ft.colors.GREEN_100),
                         ft.Text('00:00:00', height=20, weight=100, color=ft.colors.WHITE),
-                        ft.ElevatedButton('finalizar', height=20, width=100, bgcolor=ft.colors.TRANSPARENT),                   
+                        ft.ElevatedButton('finalizar', height=20, width=100, bgcolor=ft.colors.TRANSPARENT, color=ft.colors.RED_100),                   
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
 
-                ft.Divider(color=ft.colors.GREEN, height=10),
+                ft.Divider(color=ft.colors.BLUE_100, height=1),
 
                 ft.Row(
                     [
                         ft.Text('SÉRIE:', color=ft.colors.WHITE),
                         ft.Text('2', size=25, color=ft.colors.WHITE),
                         ft.Text('CARGA: ', color=ft.colors.WHITE),
-                        ft.Text('110', size=30, color=ft.colors.WHITE),
+                        ft.TextField('110', text_size=25,height=50, width=80, color=ft.colors.RED_300, border_radius=ft.border_radius.all(0)),
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_AROUND,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
 
-                ft.Divider(color=ft.colors.GREEN, height=10),
+                #ft.Divider(color=ft.colors.BLUE_100, height=1),
 
                 ft.Row(
                     [
@@ -229,7 +229,7 @@ def main(page: ft.Page):
 
     cronometro = ft.Container(
         alignment=ft.alignment.center,
-        border=ft.border.all(0.5, color=ft.colors.BLUE),
+        #border=ft.border.all(0.5, color=ft.colors.BLUE),
         border_radius=ft.border_radius.all(10),
         bgcolor=ft.colors.TRANSPARENT,
         padding=ft.Padding(left=90, top=5, bottom=5, right=1),
@@ -240,10 +240,10 @@ def main(page: ft.Page):
                 [
                     ft.Text('00:00:00', size=40, color=ft.colors.WHITE),
                     ft.Column([
-                        ft.TextButton(icon=ft.icons.PLAY_CIRCLE),
-                        ft.TextButton(icon=ft.icons.PAUSE_CIRCLE)
+                        ft.IconButton(icon=ft.icons.PLAY_CIRCLE, icon_color=ft.colors.GREEN_100),
+                        ft.TextButton('Zerar', style=ft.ButtonStyle(color=ft.colors.RED_100))
                     ],
-                    alignment=ft.MainAxisAlignment.SPACE_EVENLY,
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                     ),
                 ],
@@ -256,7 +256,7 @@ def main(page: ft.Page):
     )
 
     sair = ft.Container(
-        expand=1,
+        #expand=1,
         content=ft.Row([
             ft.TextButton(text='sair', width=60, height=20, )
             ],
