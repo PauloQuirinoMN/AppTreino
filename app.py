@@ -1,13 +1,12 @@
 import flet as ft
 
 def main(page: ft.Page):
+    page.bgcolor=ft.colors.BLACK87
     page.scroll=True
 
-    carga = ''
-
     perfil = ft.Container(
-        bgcolor=ft.colors.TRANSPARENT,
-        #expand=2,
+        border_radius=ft.border_radius.all(5),
+        expand=2,
         content=ft.Column(
             [
                 ft.Image(
@@ -38,7 +37,10 @@ def main(page: ft.Page):
                     alignment=ft.MainAxisAlignment.SPACE_EVENLY,
                     horizontal_alignment=ft.CrossAxisAlignment.START),
 
-                    ft.IconButton(icon=ft.icons.MENU, icon_size=40, icon_color=ft.colors.BLUE_100)
+                    ft.PopupMenuButton(items=[
+                        ft.PopupMenuItem(text='Editar Perfil'),
+                        ft.PopupMenuItem(text='Adicionar Treino')
+                    ])
                 ],
                 alignment=ft.MainAxisAlignment.SPACE_AROUND,
                 )
@@ -49,72 +51,77 @@ def main(page: ft.Page):
     )
     
     fichas = ft.Container(
-        bgcolor=ft.colors.TRANSPARENT,
-        padding=5,
+        border_radius=ft.border_radius.all(5),
+        expand=1,
         content=ft.Row(
             [
                 ft.Container(
-                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    #border_radius=ft.border_radius.all(10),
-                    padding=ft.padding.all(5),
+                    bgcolor=ft.colors.WHITE10,
+                    border_radius=10,
+                    border=ft.border.all(5),
                     content=ft.Column([
-                    ft.Image(src='exe.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='a.png', height=25, width=30, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
-                alignment=ft.MainAxisAlignment.CENTER,)
+                alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER,)
                 ),
 
                 ft.Container(
-                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    #border_radius=ft.border_radius.all(10),
-                    padding=ft.padding.all(5),
+                    bgcolor=ft.colors.WHITE10,
+                    border_radius=10,
+                    border=ft.border.all(5),
                     content=ft.Column([
-                    ft.Image(src='exe1.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='b.png', height=25, width=30, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
-                alignment=ft.MainAxisAlignment.CENTER,)
+                alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER)
                 ),
 
                 ft.Container(
-                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    border_radius=ft.border_radius.all(10),
-                    padding=ft.padding.all(5),
+                    bgcolor=ft.colors.WHITE10,
+                    border_radius=10,
+                    border=ft.border.all(5),
                     content=ft.Column([
-                    ft.Image(src='exe2.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='c.png', height=25, width=30, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
-                alignment=ft.MainAxisAlignment.CENTER,)
+                alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER)
                 ),
 
                 ft.Container(
-                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    border_radius=ft.border_radius.all(10),
-                    padding=ft.padding.all(5),
+                    bgcolor=ft.colors.WHITE10,
+                    border_radius=10,
+                    border=ft.border.all(5),
                     content=ft.Column([
-                    ft.Image(src='exe3.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='d.png', height=25, width=30, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
-                alignment=ft.MainAxisAlignment.CENTER,)
+                alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER)
                 ),
 
                 ft.Container(
-                    #border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    border_radius=ft.border_radius.all(10),
-                    padding=ft.padding.all(5),
+                    bgcolor=ft.colors.WHITE10,
+                    border_radius=10,
+                    border=ft.border.all(5),
                     content=ft.Column([
-                    ft.Image(src='exe2.png', height=50, width=50, color=ft.colors.WHITE),
+                    ft.Image(src='e.png', height=25, width=30, color=ft.colors.WHITE),
                     ft.Text('Per/Pant', size=12, color=ft.colors.WHITE),
                 ],
-                alignment=ft.MainAxisAlignment.CENTER,)
+                alignment=ft.MainAxisAlignment.CENTER,
+                horizontal_alignment=ft.CrossAxisAlignment.CENTER)
                 ),
             ],
-            alignment=ft.MainAxisAlignment.SPACE_AROUND,
+            alignment=ft.MainAxisAlignment.SPACE_EVENLY,
         )
     )
     mostrador = ft.Container(
+        expand=2,
         border_radius=10,
-        #border=ft.border.all(width=1.5, color=ft.colors.GREEN),
-        margin=ft.margin.all(10),
+        border=ft.border.all(5),
         bgcolor=ft.colors.WHITE10,
         padding=5,
         content=ft.Column(
@@ -142,106 +149,92 @@ def main(page: ft.Page):
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
                 ),
 
-                #ft.Divider(color=ft.colors.BLUE_100, height=1),
-
                 ft.Row(
                     [
-                        ft.Text('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', size=15, color=ft.colors.WHITE),
+                        ft.Text('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', size=16, color=ft.colors.WHITE),
                     ],
-                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                ),
+                    alignment=ft.MainAxisAlignment.CENTER,
+                ),   
             ]         
         ),
     )
     
     corpo = ft.Container(
-        bgcolor=ft.colors.TRANSPARENT,
-        padding=0,
-        #expand=6,
-        content=ft.Column(
-            [
-                ft.Container(
-                    border=ft.border.all(0.5, color=ft.colors.BLUE),
-                    border_radius=ft.border_radius.all(10),
-                    margin=ft.margin.all(10),
-                    bgcolor=ft.colors.TRANSPARENT,
-                    content=ft.Column([
-                            ft.Row(
-                                [
-                                    ft.TextButton('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
-                                    ft.Checkbox(),
-                                ],
-                                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                                vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            ),
+        border_radius=ft.border_radius.all(10),
+        expand=3,
+            content=ft.Column([
+                ft.Row(
+                    [
+                        ft.TextButton('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
+                        ft.Checkbox(),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
 
-                            ft.Row(
-                                [
-                                    ft.TextButton('Agachamento guiado + Afundo  4 x 10 + 10', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
-                                    ft.Checkbox(),
-                                ],
-                                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                                vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            ),
+                ft.Row(
+                    [
+                        ft.TextButton('Agachamento guiado + Afundo  4 x 10 + 10', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
+                        ft.Checkbox(),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
 
-                            ft.Row(
-                                [
-                                    ft.TextButton('Leg horizontal unilateral  4 x 12+ S.I', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
-                                    ft.Checkbox(),
-                                ],
-                                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                                vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            ),
+                ft.Row(
+                    [
+                        ft.TextButton('Leg horizontal unilateral  4 x 12+ S.I', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
+                        ft.Checkbox(),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
 
-                            ft.Row(
-                                [
-                                    ft.TextButton('Adutoa   4 x 12 + 10', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
-                                    ft.Checkbox(),
-                                ],
-                                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                                vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            ),
+                ft.Row(
+                    [
+                        ft.TextButton('Adutoa   4 x 12 + 10', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
+                        ft.Checkbox(),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
 
-                            ft.Row(
-                                [
-                                    ft.TextButton('Passada 1 x 60 passos', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
-                                    ft.Checkbox(),
-                                ],
-                                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                                vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            ),
+                ft.Row(
+                    [
+                        ft.TextButton('Passada 1 x 60 passos', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
+                        ft.Checkbox(),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
 
-                            ft.Row(
-                                [
-                                    ft.TextButton('Panturrilha Sentado + em pé  4 x 20 + 8+8+12', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
-                                    ft.Checkbox(),
-                                ],
-                                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
-                                vertical_alignment=ft.CrossAxisAlignment.CENTER,
-                            ),
-                        ]
-                    )
-                )
+                ft.Row(
+                    [
+                        ft.TextButton('Panturrilha Sentado + em pé  4 x 20 + 8+8+12', style=ft.ButtonStyle(color=ft.colors.WHITE, bgcolor=ft.colors.BLACK)),
+                        ft.Checkbox(),
+                    ],
+                    alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                    vertical_alignment=ft.CrossAxisAlignment.CENTER,
+                ),
             ]
         )
     )
 
+   
+
 
     cronometro = ft.Container(
+        expand=1,
+        border_radius=ft.border_radius.all(5),
         alignment=ft.alignment.center,
-        #border=ft.border.all(0.5, color=ft.colors.BLUE),
-        border_radius=ft.border_radius.all(10),
-        bgcolor=ft.colors.TRANSPARENT,
         padding=ft.Padding(left=90, top=5, bottom=5, right=1),
-        margin=10,
-        #expand=2,
         content=ft.Column([
             ft.Row(
                 [
                     ft.Text('00:00:00', size=40, color=ft.colors.WHITE),
                     ft.Column([
                         ft.IconButton(icon=ft.icons.PLAY_CIRCLE, icon_color=ft.colors.GREEN_100),
-                        ft.TextButton('Zerar', style=ft.ButtonStyle(color=ft.colors.RED_100))
+                        ft.IconButton(content=ft.Image(src='reset.png', height=30, width=25, color=ft.colors.AMBER)),
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     horizontal_alignment=ft.CrossAxisAlignment.CENTER,
@@ -256,25 +249,25 @@ def main(page: ft.Page):
     )
 
     sair = ft.Container(
-        #expand=1,
+        margin=ft.Margin(left=1, top=0, right=1, bottom=8),
+        border_radius=ft.border_radius.all(5),
         content=ft.Row([
-            ft.TextButton(text='sair', width=60, height=20, )
+            ft.TextButton(text='sair', width=60, height=20)
             ],
             alignment=ft.MainAxisAlignment.CENTER,
-            vertical_alignment=ft.CrossAxisAlignment.CENTER,
+            vertical_alignment=ft.CrossAxisAlignment.START,
         ),
     )
 
 
     layout = ft.Container(
+        border=ft.border.all(1, color=ft.colors.WHITE),
+        #image_src='bgcinza.jpg',
+        image_repeat=ft.ImageRepeat.REPEAT,
         alignment=ft.alignment.center,
-        margin=ft.margin.all(5),
-        border_radius=30,
-        border=ft.border.all(1.5, color=ft.colors.GREEN),
-        padding=ft.padding.all(5),     
-        height=800,
+        border_radius=5,
+        height=750,
         width=400,
-        bgcolor=ft.colors.BLACK,
         shadow=ft.BoxShadow(
             spread_radius=0,
             blur_radius=10,
@@ -289,7 +282,8 @@ def main(page: ft.Page):
                 cronometro,
                 corpo,
                 sair,
-            ]
+            ],
+            spacing=1,
         ),
     )
 
