@@ -4,7 +4,7 @@ def main(page: ft.Page):
     page.bgcolor=ft.colors.BLACK
 
     perfil = ft.Container(
-        bgcolor=ft.colors.WHITE38,
+        bgcolor='#CBCBC7',
         border=ft.Border(top=ft.BorderSide(width=1, color=ft.colors.GREEN), bottom=ft.BorderSide(width=1, color=ft.colors.GREEN), left=ft.BorderSide(1, color=ft.colors.GREEN), right=ft.BorderSide(1, color=ft.colors.GREEN)),
         margin=8,
         border_radius=5,
@@ -43,7 +43,7 @@ def main(page: ft.Page):
 
                     ft.PopupMenuButton(
                         icon_size=35,
-                        icon_color=ft.colors.GREEN_100,
+                        icon_color=ft.colors.GREEN_ACCENT,
                         items=[
                         ft.PopupMenuItem(text='Editar Perfil'),
                         ft.PopupMenuItem(text='Adicionar Treino'),
@@ -144,9 +144,9 @@ def main(page: ft.Page):
             [
                 ft.Row(
                     [
-                        ft.ElevatedButton('INICÍAR', height=20, width=100, bgcolor=ft.colors.BLACK12, color=ft.colors.WHITE),
+                        ft.ElevatedButton('INICÍAR', height=20, width=100, bgcolor=ft.colors.GREEN_ACCENT, color=ft.colors.WHITE),
                         ft.Text('00:00:00', height=20, weight=100, color=ft.colors.BLACK),
-                        ft.ElevatedButton('FINALIZAR', height=20, width=120, bgcolor=ft.colors.BLACK38, color=ft.colors.WHITE),                   
+                        ft.ElevatedButton('FINALIZAR', height=20, width=120, bgcolor=ft.colors.RED_ACCENT, color=ft.colors.WHITE),                   
                     ],
                     alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                     vertical_alignment=ft.CrossAxisAlignment.CENTER,
@@ -165,12 +165,18 @@ def main(page: ft.Page):
 
                 ft.Divider(color=ft.colors.GREEN_100, height=2),
 
-                ft.Row(
+                ft.Container(
+                    height=30,
+                    border=ft.border.all(1),
+                    border_radius=ft.border_radius.all(5),
+                    bgcolor=ft.colors.BLACK38,
+                    content=ft.Row(
                     [
-                        ft.Text('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', size=15, color=ft.colors.BLACK, text_align=ft.TextAlign.CENTER),
+                        ft.Text('Leg Press 45º + Agachamento    P.C 4 x 12 + 10', size=15, color=ft.colors.WHITE, text_align=ft.TextAlign.CENTER),
                     ],
                     alignment=ft.MainAxisAlignment.CENTER,
                 ), 
+                ),
 
                 ft.Divider(color=ft.colors.GREEN_100, height=2),  
             ]         
@@ -285,7 +291,7 @@ def main(page: ft.Page):
         margin=ft.Margin(left=1, top=3, right=1, bottom=3),
         border_radius=ft.border_radius.all(5),
         content=ft.Row([
-            ft.TextButton(text='sair', width=60, height=20, style=ft.ButtonStyle(bgcolor=ft.colors.WHITE38, color=ft.colors.BLACK))
+            ft.TextButton(text='sair', width=60, height=20, style=ft.ButtonStyle(bgcolor='#CBCBC7', color=ft.colors.BLACK))
             ],
             alignment=ft.MainAxisAlignment.CENTER,
             vertical_alignment=ft.CrossAxisAlignment.START,
@@ -293,7 +299,7 @@ def main(page: ft.Page):
     )
 
     ficha = ft.Container(
-        bgcolor=ft.colors.WHITE38,
+        bgcolor='#CBCBC7',
         margin=ft.Margin(left=10, top=0, right=10, bottom=0),
         expand=5,
         border=ft.border.all(1, color=ft.colors.GREEN),
@@ -308,7 +314,7 @@ def main(page: ft.Page):
     )
 
     layout = ft.Container(
-        bgcolor=ft.colors.WHITE10,
+        bgcolor=ft.colors.WHITE12,
         border=ft.border.all(1, color=ft.colors.GREEN),
         alignment=ft.alignment.center,
         border_radius=5,
